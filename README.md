@@ -31,7 +31,7 @@ CodeGuard Pro is a open-source application designed for streamlined issue tracki
 - Configure the database connection details in `config.php` to establish connection.
 
 ### 2. Database Initialization:
-- Execute the SQL script (`codeGuard_db.sql`) provided to set up the necessary tables and relationships in database.
+- Execute the SQL script (`codeguard_pro.sql`) provided to set up the necessary tables and relationships in database.
 
 ### 3. Run the Application:
 - Start your web server to initiate the application.
