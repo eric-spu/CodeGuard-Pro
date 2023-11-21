@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Update Issue</title>
+</head>
+<body>
+    <h1>Update Issue</h1>
+    
+    <!-- Issue Update Form -->
+    <form method="post">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="{{ issue.description }}" required>
+        
+        <label for="severity">Severity:</label>
+        <select id="severity" name="severity" required>
+            <option value="Low" {% if issue.severity == 'Low' %}selected{% endif %}>Low</option>
+            <option value="Medium" {% if issue.severity == 'Medium' %}selected{% endif %}>Medium</option>
+            <option value="High" {% if issue.severity == 'High' %}selected{% endif %}>High</option>
+        </select>
+
+        <label for="language">Language:</label>
+        <input type="text" id="language" name="language" value="{{ issue.language }}" required>
+
+        <label for="assignee">Assignee:</label>
+        <input type="text" id="assignee" name="assignee" value="{{ issue.assignee }}">
+        
+        <button type="submit">Update Issue</button>
+    </form>
+</body>
+</html>

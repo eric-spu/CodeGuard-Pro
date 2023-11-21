@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Create Issue</title>
+</head>
+<body>
+    <h1>Create New Issue</h1>
+    
+    <!-- Issue Creation Form -->
+    <form method="post">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        
+        <label for="severity">Severity:</label>
+        <select id="severity" name="severity" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <label for="language">Language:</label>
+        <input type="text" id="language" name="language" required>
+
+        <label for="assignee">Assignee:</label>
+        <input type="text" id="assignee" name="assignee">
+        
+        <button type="submit">Create Issue</button>
+    </form>
+</body>
+</html>
