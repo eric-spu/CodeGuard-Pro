@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title>Issue Tracker</title>
+</head>
+<body>
+    <h1>Issue Tracker</h1>
+    
+    <!-- Display Issues -->
+    {% for issue in issues %}
+        <div>
+            <strong>{{ issue.description }}</strong>
+            <p>Severity: {{ issue.severity }}, Status: {{ issue.status }}, Assignee: {{ issue.assignee }}, Language: {{ issue.language }}</p>
+        </div>
+    {% endfor %}
+
+    <!-- Add link to create new issue -->
+    <a href="{{ url_for('create_issue') }}">Create New Issue</a>
+
+    <!-- Logout button if user is authenticated -->
+    {% if current_user.is_authenticated %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+</body>
+</html>
